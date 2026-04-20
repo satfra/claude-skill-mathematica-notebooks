@@ -103,7 +103,3 @@ This makes the skill useful as a plain CLI tool too — e.g., for generating not
 - **"No Wolfram kernel found on PATH"** — Install [Wolfram Engine](https://www.wolfram.com/engine/) (free) or use a full Wolfram Desktop / Mathematica install and ensure `wolframscript`, `wolfram`, or `math` is on your `$PATH`. The standalone frontend (`Mathematica.app` / `Mathematica.exe`) is not a kernel.
 - **"file does not parse as a valid Wolfram Notebook expression"** — usually the `.nb` was hand-edited and its expression syntax was damaged. Open it in the Wolfram frontend, save, and re-try.
 - **Sandboxed environments** — if Claude's bash is restricted from running the wrapper, it falls back to writing the `Notebook[{…}]` expression directly (see SKILL.md "If the wrapper can't be executed"). The user can re-run the wrapper on the saved `cells.json` once wrapper access is granted.
-
-## License
-
-MIT (or whatever you decide when you push) — SKILL.md and scripts are plain text with no external dependencies beyond the Wolfram kernel.
