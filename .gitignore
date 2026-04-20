@@ -1,0 +1,17 @@
+# skill-creator workspace: iteration outputs, benchmarks, venv
+mathematica-notebook-workspace/
+
+# packaged build artifact (ship via Releases, not source)
+*.skill
+
+# python cruft, in case any slips in
+__pycache__/
+*.pyc
+.venv/
+
+# editor / OS noise
+.DS_Store
+*.swp
+*.swo
+.idea/
+.vscode/

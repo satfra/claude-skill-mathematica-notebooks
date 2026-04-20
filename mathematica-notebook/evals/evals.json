@@ -1,0 +1,26 @@
+{
+  "skill_name": "mathematica-notebook",
+  "evals": [
+    {
+      "id": 0,
+      "name": "gamma-matrix-traces",
+      "prompt": "Make me a Mathematica notebook that sets up the Dirac gamma matrices in the Weyl (chiral) representation, and then computes a handful of trace identities for products of gamma matrices — at least Tr[gamma^mu gamma^nu], Tr[gamma^mu gamma^nu gamma^rho gamma^sigma], and the trace with a gamma^5 inserted. Save the notebook to pendulum... wait, I mean, save it to gamma_traces.nb. I want to be able to open it and step through it myself.",
+      "expected_output": "A gamma_traces.nb file containing a structured notebook with Title/Section headings, code cells defining the 4x4 Weyl-representation gamma matrices, a definition of gamma5, and cells computing the requested traces. Should be unevaluated (no Output cells).",
+      "files": []
+    },
+    {
+      "id": 1,
+      "name": "inflaton-slow-roll",
+      "prompt": "I need a notebook for doing some quick slow-roll inflation checks. Please scaffold one that defines two inflaton potentials, V(phi) = (1/2) m^2 phi^2 and V(phi) = (1/4) lambda phi^4, with reasonable placeholder values for m and lambda. Set up the background ODEs for phi(t) and H(t) in natural units (Mp = 1), pick typical large-field initial conditions, integrate numerically with NDSolve, and use FindRoot or WhenEvent to pull out the time t_end where the slow-roll parameter epsilon = 1 (slow-roll ends). Save as inflaton.nb.",
+      "expected_output": "An inflaton.nb file covering: Title, sections for each potential, Input cells defining V, the Friedmann + KG equations, initial conditions, NDSolve invocation, epsilon computation, and extraction of t_end. Unevaluated notebook.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "pendulum-euler-lagrange",
+      "prompt": "Can you put together a little notebook that derives the equations of motion for a simple pendulum via the Euler-Lagrange formalism? Use theta(t) as the generalized coordinate, write down the Lagrangian, take the derivatives, simplify, and show the small-angle limit too. Output it to pendulum.nb.",
+      "expected_output": "A pendulum.nb notebook with Title, sections for Lagrangian / Euler-Lagrange derivation / small-angle limit, proper Input cells that would evaluate correctly, narrative Text cells between them. Unevaluated.",
+      "files": []
+    }
+  ]
+}
