@@ -1,6 +1,6 @@
 # mathematica-notebook
 
-A [Claude](https://claude.com/claude-code) skill for authoring and round-tripping [Wolfram Mathematica](https://www.wolfram.com/mathematica/) notebooks (`.nb` files) from natural-language requests.
+A [Claude](https://claude.com/claude-code) skill for authoring and editing [Wolfram Mathematica](https://www.wolfram.com/mathematica/) notebooks (`.nb` files) from natural-language requests.
 
 Ask Claude for a notebook — "scaffold me a notebook that derives the Euler–Lagrange equations for a simple pendulum" — and it produces a real, unevaluated `.nb` file structured with `Title` / `Section` / `Text` / `Input` cells that you can open in the Wolfram frontend and step through with Shift-Enter.
 

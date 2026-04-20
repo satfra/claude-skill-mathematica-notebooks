@@ -1,0 +1,30 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build .skill bundle
+        run: |
+          cd mathematica-notebook
+          chmod +x scripts/run_wolfram.sh
+          cd ..
+          zip -r "mathematica-notebook-${GITHUB_REF_NAME}.skill" mathematica-notebook \
+            -x "mathematica-notebook/evals/*"
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: mathematica-notebook-*.skill
+          generate_release_notes: true
+          fail_on_unmatched_files: true
