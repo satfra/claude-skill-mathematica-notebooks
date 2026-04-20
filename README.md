@@ -39,7 +39,7 @@ On macOS, the wrapper also looks in `/Applications/Mathematica.app/Contents/MacO
 This repo is a Claude Code **marketplace**, so the fastest install is from inside Claude Code itself:
 
 ```text
-/plugin marketplace add <you>/mathematica-notebook-skill
+/plugin marketplace add satfra/claude-skill-mathematica-notebooks
 /plugin install mathematica-notebook@mathematica-notebook-marketplace
 ```
 
