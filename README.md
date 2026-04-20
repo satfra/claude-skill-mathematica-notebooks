@@ -1,4 +1,4 @@
-# mathematica-notebook
+# Claude skill: mathematica-notebook
 
 A [Claude](https://claude.com/claude-code) skill for authoring and editing [Wolfram Mathematica](https://www.wolfram.com/mathematica/) notebooks (`.nb` files) from natural-language requests.
 
