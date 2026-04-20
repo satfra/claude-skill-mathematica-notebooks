@@ -24,8 +24,10 @@ On macOS, the wrapper also looks in `/Applications/Mathematica.app/Contents/MacO
 
 ```text
 <repo>/
-├── README.md                       ← this file
-└── mathematica-notebook/           ← the skill itself (install this)
+├── README.md                            ← this file
+├── .claude-plugin/
+│   └── marketplace.json                 ← makes this repo a Claude Code marketplace
+└── mathematica-notebook/                ← the skill itself
     ├── SKILL.md
     └── scripts/
         ├── run_wolfram.sh
@@ -34,7 +36,20 @@ On macOS, the wrapper also looks in `/Applications/Mathematica.app/Contents/MacO
 
 ## Installation
 
-Clone the repo, then copy (or symlink) the `mathematica-notebook/` subfolder into your Claude skills directory:
+This repo is a Claude Code **marketplace**, so the fastest install is from inside Claude Code itself:
+
+```text
+/plugin marketplace add <you>/mathematica-notebook-skill
+/plugin install mathematica-notebook@mathematica-notebook-marketplace
+```
+
+(Replace `<you>` with the GitHub owner, or pass the full URL: `https://github.com/<you>/mathematica-notebook-skill`.)
+
+Updates: bump the `version` in `.claude-plugin/marketplace.json`, push, and users re-run `/plugin install` to pick it up.
+
+### Alternative: drop-in install
+
+If you're not using the marketplace system, clone and copy the subfolder into your skills directory:
 
 ```bash
 git clone https://github.com/<you>/mathematica-notebook-skill.git
@@ -42,7 +57,7 @@ cp -r mathematica-notebook-skill/mathematica-notebook ~/.claude/skills/
 chmod +x ~/.claude/skills/mathematica-notebook/scripts/run_wolfram.sh
 ```
 
-Or, if you prefer a packaged install, grab the `.skill` artifact from the Releases page and install via your Claude harness's plugin mechanism.
+Or grab the `.skill` bundle from the [Releases](https://github.com/<you>/mathematica-notebook-skill/releases) page and install via your harness's plugin mechanism.
 
 ## Quick examples
 

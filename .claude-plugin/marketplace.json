@@ -1,0 +1,16 @@
+{
+  "name": "mathematica-notebook-marketplace",
+  "owner": {
+    "name": "Franz Sattler",
+    "email": "fsattler-anthropic@physik.uni-bielefeld.de"
+  },
+  "plugins": [
+    {
+      "name": "mathematica-notebook",
+      "source": "./mathematica-notebook",
+      "description": "Author and edit Wolfram Mathematica notebooks (.nb files) from natural-language requests.",
+      "version": "0.1.0",
+      "license": "MIT"
+    }
+  ]
+}
