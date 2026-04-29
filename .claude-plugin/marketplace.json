@@ -9,7 +9,7 @@
       "name": "mathematica-notebook",
       "source": "./mathematica-notebook",
       "description": "Author and edit Wolfram Mathematica notebooks (.nb files) from natural-language requests.",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "license": "MIT"
     }
   ]
