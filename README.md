@@ -20,24 +20,6 @@ A local Wolfram kernel. The bundled wrapper probes for one automatically:
 
 On macOS, the wrapper also looks in `/Applications/Mathematica.app/Contents/MacOS/` and similar app-bundle locations. The **standalone Mathematica front-end alone is not enough** — you need a command-line kernel.
 
-## Repo layout
-
-```text
-<repo>/
-├── README.md                            ← this file
-├── .claude-plugin/
-│   └── marketplace.json                 ← makes this repo a Claude Code marketplace
-└── mathematica-notebook/                ← the Claude Code plugin
-    ├── .claude-plugin/
-    │   └── plugin.json
-    └── skills/
-        └── mathematica-notebook/        ← the skill itself
-            ├── SKILL.md
-            └── scripts/
-                ├── run_wolfram.sh
-                └── nb_tool.wls
-```
-
 ## Installation
 
 This repo is a Claude Code **marketplace**, so the fastest install is from inside Claude Code itself:
@@ -46,10 +28,6 @@ This repo is a Claude Code **marketplace**, so the fastest install is from insid
 /plugin marketplace add satfra/claude-skill-mathematica-notebooks
 /plugin install mathematica-notebook@mathematica-notebook-marketplace
 ```
-
-(Replace `<you>` with the GitHub owner, or pass the full URL: `https://github.com/<you>/mathematica-notebook-skill`.)
-
-Updates: bump the `version` in `.claude-plugin/marketplace.json`, push, and users re-run `/plugin install` to pick it up.
 
 ### Alternative: drop-in install
 
