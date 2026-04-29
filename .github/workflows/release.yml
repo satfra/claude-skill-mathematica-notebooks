@@ -16,11 +16,16 @@ jobs:
 
       - name: Build .skill bundle
         run: |
-          cd mathematica-notebook
-          chmod +x scripts/run_wolfram.sh
-          cd ..
-          zip -r "mathematica-notebook-${GITHUB_REF_NAME}.skill" mathematica-notebook \
-            -x "mathematica-notebook/evals/*"
+          # Stage the skill (without evals) so the .skill bundle keeps the
+          # standalone Anthropic Skill layout: SKILL.md at the top of the
+          # zipped `mathematica-notebook/` directory.
+          SRC=mathematica-notebook/skills/mathematica-notebook
+          chmod +x "$SRC/scripts/run_wolfram.sh"
+          mkdir -p _bundle/mathematica-notebook
+          cp "$SRC/SKILL.md" _bundle/mathematica-notebook/
+          cp -r "$SRC/scripts" _bundle/mathematica-notebook/
+          cd _bundle
+          zip -r "../mathematica-notebook-${GITHUB_REF_NAME}.skill" mathematica-notebook
 
       - name: Create GitHub release
         uses: softprops/action-gh-release@v2

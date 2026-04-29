@@ -1,0 +1,10 @@
+{
+  "name": "mathematica-notebook",
+  "version": "0.1.0",
+  "description": "Author and edit Wolfram Mathematica notebooks (.nb files) from natural-language requests.",
+  "author": {
+    "name": "Franz Sattler",
+    "email": "fsattler-anthropic@physik.uni-bielefeld.de"
+  },
+  "license": "MIT"
+}

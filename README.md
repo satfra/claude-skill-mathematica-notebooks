@@ -27,11 +27,15 @@ On macOS, the wrapper also looks in `/Applications/Mathematica.app/Contents/MacO
 ├── README.md                            ← this file
 ├── .claude-plugin/
 │   └── marketplace.json                 ← makes this repo a Claude Code marketplace
-└── mathematica-notebook/                ← the skill itself
-    ├── SKILL.md
-    └── scripts/
-        ├── run_wolfram.sh
-        └── nb_tool.wls
+└── mathematica-notebook/                ← the Claude Code plugin
+    ├── .claude-plugin/
+    │   └── plugin.json
+    └── skills/
+        └── mathematica-notebook/        ← the skill itself
+            ├── SKILL.md
+            └── scripts/
+                ├── run_wolfram.sh
+                └── nb_tool.wls
 ```
 
 ## Installation
@@ -53,7 +57,7 @@ If you're not using the marketplace system, clone and copy the subfolder into yo
 
 ```bash
 git clone https://github.com/<you>/mathematica-notebook-skill.git
-cp -r mathematica-notebook-skill/mathematica-notebook ~/.claude/skills/
+cp -r mathematica-notebook-skill/mathematica-notebook/skills/mathematica-notebook ~/.claude/skills/
 chmod +x ~/.claude/skills/mathematica-notebook/scripts/run_wolfram.sh
 ```
 
@@ -72,9 +76,8 @@ Ask Claude things like:
 Claude authors a flat list of cell specs as JSON, passes them to the bundled Wolfram script, and the kernel builds a real `Notebook[{Cell[…], …}]` expression and writes it out with `Put`. `Input`/`Code`/`Program` cell bodies are wrapped in `BoxData[…]` so the frontend renders them as formatted code; other styles (Title, Section, Text, …) take plain strings.
 
 ```text
-mathematica-notebook/
+mathematica-notebook/skills/mathematica-notebook/
 ├── SKILL.md              ← instructions Claude reads when the skill triggers
-├── README.md             ← you are here
 └── scripts/
     ├── run_wolfram.sh    ← bash wrapper: probes for a Wolfram kernel
     └── nb_tool.wls       ← Wolfram Language script: create / extract
